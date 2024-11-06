@@ -1,6 +1,8 @@
-source "https://rubygems.org"
+source "https://mirrors.tuna.tsinghua.edu.cn/rubygems/"
 
-gem "no-style-please"
 gem 'kramdown-parser-gfm'
-
-gem 'webrick', '~> 1.7'
+gem 'jekyll'
+gem 'jekyll-feed'
+gem 'jekyll-seo-tag'
+gem 'webrick'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
