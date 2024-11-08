@@ -141,9 +141,9 @@ docsearch:                                                                # DocS
 
 comments:                                                                 # 评论功能
   disqus: true                                                            # 是否开启 Disqus 评论
-  disqus_url: 'https://h2o-ac.disqus.com/embed.js'                        # Disqus 链接
-  waline: true                                                            # 是否开启 Waline 评论
-  waline_url: 'https://h2o-ac-waline.deta.dev/'                           # Waline 链接
+  disqus_url: 'https://shane.disqus.com/embed.js'                        # Disqus 链接
+  waline: false                                                            # 是否开启 Waline 评论
+  waline_url: ''                           # Waline 链接
   waline_reaction: true                                                   # 是否开启 Waline 表情反馈，以下为自定义本地化配置。
   waline_locale: "{reaction0: '赞一个', reaction1: '踩一下', reaction2: '有点酷', reaction3: '看不懂', reaction4: '啥玩意', reaction5: '想睡觉'}"
 
@@ -152,6 +152,6 @@ busuanzi: true                                                            # Busu
 google_analytics: 'UA-111111111-1'                                        # 谷歌统计分析
 google_search: '{GIVEN LONG STRING}'                                      # 谷歌搜索验证所有权
 umami:                                                                    # Umami 统计
-  status: true
+  status: false
   id: '{Umami ID}'
   js: 'https://umami.jekyll-theme-h2o-ac.com/umami.js'
