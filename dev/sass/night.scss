@@ -183,10 +183,8 @@
         background-color: #575B63;
       }
     }
-
     .submenu {
       color: #ffffff;
-
       a {
         color: #ffffff;
       }
@@ -250,7 +248,6 @@
     table tr {
       background-color: transparent;
     }
-
     #archive-articles {
       ul {
         li:before {
@@ -277,7 +274,7 @@
     }
   }
 
-  :not(pre) > code[class*="language-"],
+  :not(pre)>code[class*="language-"],
   pre[class*="language-"] {
     // background-color: $color-dark-secondary;
     background-color: #efefef;
@@ -327,7 +324,6 @@
   .bttb .tool {
     background-color: #444950;
     color: #AFB3B7;
-
     &:hover {
       background-color: #606770;
     }

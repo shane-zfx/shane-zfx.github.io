@@ -1,69 +1,69 @@
 <header class="g-header" data-theme="{{ site.theme-color }}">
     <div class="g-logo">
-        <a href="{{ "/" | relative_url }}" aria-label="logo"></a>
+      <a href="{{ "/" | relative_url }}" aria-label="logo"></a>
     </div>
     <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
     {% if site.search and site.search_type == "docsearch" %}
-    <div id="search-toggle"></div>
+        <div id="search-toggle"></div>
     {% endif %}
     {% if site.badges.travelling %}
     <div id="travelling-toggle">
-        <a aria-label="Travelings" href="https://www.travellings.cn/go.html" target="_blank">
-            <svg aria-hidden="true" class="icon">
+        <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+            <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-train-subway"></use>
             </svg>
         </a>
     </div>
     {% endif %}
     <div id="mode-toggle">
-        <svg aria-hidden="true" class="icon icon-day">
+        <svg class="icon icon-day" aria-hidden="true">
             <use xlink:href="#icon-day"></use>
         </svg>
-        <svg aria-hidden="true" class="icon icon-night">
+        <svg class="icon icon-night" aria-hidden="true">
             <use xlink:href="#icon-night"></use>
         </svg>
     </div>
-    <svg aria-hidden="true" class="icon-menu" id="menu-toggle">
+    <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
         <use xlink:href="#icon-menu"></use>
     </svg>
     <nav class="g-nav">
         <ul>
             {% for i in site.nav %}
-            {% if i[1].first %}
-            <li class="dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);"> {{ i[0] }} </a>
-                <ul class="dropdown-menu">
+                {% if i[1].first %}
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);"> {{ i[0] }} </a>
+                    <ul class="dropdown-menu">
                     {% for j in i[1] %}
-                    <li>
-                        <a aria-label="{{ j[0] }}" href="{{ j[1] | relative_url}}">
-                            {{ j[0] }}
-                        </a>
-                    </li>
+                        <li>
+                            <a href="{{ j[1] | relative_url}}" aria-label="{{ j[0] }}">
+                                {{ j[0] }}
+                            </a>
+                        </li>
                     {% endfor %}
-                </ul>
-            </li>
-            {% else %}
-            <li>
-                <a aria-label="{{ i[0] }}" href="{{ i[1] | relative_url}}">
-                    {{ i[0] }}
-                </a>
-            </li>
-            {% endif %}
+                    </ul> 
+                </li>
+                {% else %}
+                <li>
+                    <a href="{{ i[1] | relative_url}}" aria-label="{{ i[0] }}">
+                        {{ i[0] }}
+                    </a>
+                </li>
+                {% endif %}
             {% endfor %}
             {% if site.badges.travelling %}
             <li class="travelling">
-                <a aria-label="Travelings" href="https://www.travellings.cn/go.html" target="_blank">
-                    <svg aria-hidden="true" class="icon">
+                <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-train-subway"></use>
                     </svg>
                 </a>
             </li>
             {% endif %}
             <li class="mode">
-                <svg aria-hidden="true" class="icon day">
+                <svg class="icon day" aria-hidden="true">
                     <use xlink:href="#icon-day"></use>
                 </svg>
-                <svg aria-hidden="true" class="icon night">
+                <svg class="icon night" aria-hidden="true">
                     <use xlink:href="#icon-night"></use>
                 </svg>
             </li>

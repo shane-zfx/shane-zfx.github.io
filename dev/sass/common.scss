@@ -12,8 +12,6 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  //flex-direction: column; // 在小屏幕下改为竖向布局
-  //align-items: center; // 水平居中
 }
 
 a {
@@ -241,7 +239,6 @@ a {
     }
   }
 }
-
 li#search {
   margin: 8px 5px;
 }
@@ -395,7 +392,7 @@ li#search {
 
 .g-footer {
   min-height: $g-footer-h;
-  padding: 10px 0;
+  padding: 20px 0;
   border-top: 1px solid #E7EAF1;
   text-align: center;
   background-color: #ffffff;
@@ -406,14 +403,12 @@ li#search {
     @include clearfix;
 
     .g-left {
-      flex-basis: 52%;
-      flex-grow: 1;
+      width: 500px;
       text-align: left;
     }
 
     .g-right {
-      flex-basis: 48%;
-      flex-grow: 1;
+      width: 500px;
       text-align: right;
 
       .badges {

@@ -2,90 +2,74 @@
   p {
     margin-bottom: 0;
   }
-
-  &.note, &.info, &.warning, &.error, &.citation {
+  &.note, &.info, &.warning, &.error, &.citation{
     border-radius: 6.4px;
     padding: 1rem;
     margin-bottom: 1em;
   }
-
-  &.note {
+  &.note{
     background-color: $color-note-contrast-background;
     border-left: 5px solid $color-note-darkest;
     color: $color-note-darkest;
-
-    code {
+    code{
       background-color: $color-note-code-background;
-      color: $color-note-darkest !important;
+      color: $color-note-darkest!important;
     }
   }
-
-  &.info {
+  &.info{
     background-color: $color-info-contrast-background;
     border-left: 5px solid $color-info-dark;
     color: $color-info-dark;
-
-    code {
+    code{
       background-color: $color-info-code-background;
-      color: $color-info-dark !important;
+      color: $color-info-dark!important;
     }
   }
-
-  &.warning {
+  &.warning{
     background-color: $color-warning-contrast-background;
     border-left: 5px solid $color-warning-dark;
     color: $color-warning-dark;
-
-    code {
+    code{
       background-color: $color-warning-code-background;
-      color: $color-warning-dark !important;
+      color: $color-warning-dark!important;
     }
   }
-
-  &.error {
+  &.error{
     background-color: $color-error-contrast-background;
     border-left: 5px solid $color-error-dark;
     color: $color-error-dark;
-
-    code {
+    code{
       background-color: $color-error-code-background;
-      color: $color-error-dark !important;
+      color: $color-error-dark!important;
     }
   }
-
-  &.citation {
+  &.citation{
     background-color: $color-citation-contrast-background;
     border-left: 5px solid $color-citation-darkest;
     color: $color-citation-darkest;
-
-    code {
+    code{
       background-color: $color-citation-code-background;
-      color: $color-citation-darkest !important;
+      color: $color-citation-darkest!important;
     }
-
-    .ref {
+    .ref{
       text-align: right;
     }
   }
-
-  .header {
+  .header{
     font-weight: 700;
     line-height: 17.5px;
     margin-bottom: 0.3rem;
   }
-
-  code {
+  code{
     text-shadow: none;
   }
-
-  .icon {
+  .icon{
     width: 18px;
     height: 18px;
     margin-bottom: -2px;
     margin-right: 5px;
   }
-
-  .title {
+  .title{
     display: inline-block;
   }
 }
@@ -93,24 +77,19 @@
 .night-mode {
   .premonition {
     color: #fff;
-
-    &.note {
+    &.note{
       background-color: $color-note-contrast-foreground;
     }
-
-    &.info {
+    &.info{
       background-color: $color-info-contrast-foreground;
     }
-
-    &.warning {
+    &.warning{
       background-color: $color-warning-contrast-foreground;
     }
-
-    &.error {
+    &.error{
       background-color: $color-error-contrast-foreground;
     }
-
-    &.citation {
+    &.citation{
       background-color: $color-citation-contrast-foreground;
     }
   }

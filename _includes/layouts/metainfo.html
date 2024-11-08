@@ -4,11 +4,10 @@
 <script>
     $(document).ready(function () {
         var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
-
         function dateFormat(date, format) {
             var date_org = dayjs(date, time_formats[format]);
             var date = date_org.format(time_formats[format]);
-            return {"date_org": date_org, "date": date}
+            return { "date_org": date_org, "date": date }
         }
 
         dayjs.extend(window.dayjs_plugin_customParseFormat);

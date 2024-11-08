@@ -1,6 +1,5 @@
 $(document).ready(function () {
-    document.body.addEventListener('touchstart', function () {
-    }, {passive: true});
+    document.body.addEventListener('touchstart', function () { }, { passive: true });
 
     var nav = $('.g-nav');
     var baseurl = $("meta[property='og:baseurl']").attr('content');
@@ -147,7 +146,6 @@ $(document).ready(function () {
         $('#tools .tool.collection .b1').addClass("active");
         $('#tools .tool.collection .b2').removeClass("active");
     }
-
     function clickSubmenu() {
         $('.submenu').toggleClass("active");
         $('#tools .tool.collection .b1').toggleClass("active");
@@ -156,7 +154,6 @@ $(document).ready(function () {
         $('#tools .tool.toc .b1').addClass("active");
         $('#tools .tool.toc .b2').removeClass("active");
     }
-
     $('#tools .tool.toc').bind('click', function () {
         clickTOC()
     });
@@ -175,7 +172,7 @@ $(document).ready(function () {
      * Back To Top Button
      */
     $('.bttb').bind('click', function () {
-        $('html,body').animate({scrollTop: 0}, function () {
+        $('html,body').animate({ scrollTop: 0 }, function () {
             $('#bttb').removeClass("active");
         });
     });
@@ -251,7 +248,6 @@ $(document).ready(function () {
 
         $('#page-link-container').html(link_html);
     }
-
     pagination();
 
     /**
@@ -358,7 +354,6 @@ $(document).ready(function () {
             e.preventDefault();
         });
     }
-
     $('.post-content').on('mouseup', function (e) {
         var txt = window.getSelection();
         if (txt.toString().length >= 30) {
@@ -387,18 +382,17 @@ $(document).ready(function () {
                 $(sidebar_alis).removeClass('active');
                 $(sidebar_alis[i]).addClass('active');
                 a_height = $(".toc-body li.active").offset().top - $(".toc-header h2").offset().top
-                var t_height = $(".toc-body li.active").offset().top - $(".toc-body li:first-child").offset().top
+                var t_height = $(".toc-body li.active").offset().top-$(".toc-body li:first-child").offset().top
                 if (a_height < 22) {
-                    $(".toc-body").scrollTop(t_height - 350);
+                    $(".toc-body").scrollTop(t_height-350);
                 }
                 if (a_height > 350) {
-                    $(".toc-body").scrollTop(t_height - 72);
+                    $(".toc-body").scrollTop(t_height-72);
                 }
             }
         }
     }
-
-    if ($(".toc-body").length > 0) {
+    if($(".toc-body").length >0){
         $($('.table-of-contents a').parent()[0]).addClass('active');
         locateCatelogList();
         $(window).bind('scroll', locateCatelogList);
@@ -561,9 +555,7 @@ $(document).ready(function () {
      *  Error image loading
      */
     document.addEventListener('error', function (e) {
-        if (e.target.nodeName == 'IMG') {
-            e.target.src = baseurl + '/assets/img/placeholder.webp';
-        }
+        if (e.target.nodeName == 'IMG') { e.target.src = baseurl + '/assets/img/placeholder.webp'; }
     }, true);
 
     /**
@@ -574,7 +566,6 @@ $(document).ready(function () {
     var alivetime_hours = $(".alivetime_hours")
     var alivetime_minutes = $(".alivetime_minutes")
     var alivetime_seconds = $(".alivetime_seconds")
-
     function alive_time() {
         var alivestart = $("meta[name='alivestart']").attr('content');
         window.setTimeout(alive_time, 1000);
@@ -597,7 +588,6 @@ $(document).ready(function () {
         alivetime_seconds.html(seconds)
         // alivetime.html(daysold + " 天 " + hrsold + " 小时 " + minsold + " 分 " + seconds + " 秒");
     }
-
     alive_time();
 
     /**
@@ -606,7 +596,7 @@ $(document).ready(function () {
     var calendarScale = $("meta[property='calendar-scale']").attr('content');
     var calendarScheme = $("meta[property='calendar-scheme']").attr('content');
     var calendarColor = $("meta[property='calendar-color']").attr('content');
-    var cal_color = {'type': 'threshold', 'domain': [4, 6, 8]};
+    var cal_color = { 'type': 'threshold', 'domain': [4, 6, 8] };
     var d3Colors = ['blues', 'greens', 'greys', 'oranges', 'purples', 'reds', 'bugn', 'bupu', 'gnbu', 'orrd', 'pubu', 'pubugn', 'purd', 'rdpu', 'ylgn', 'ylgnbu', 'ylorbr', 'ylorrd', 'cividis', 'inferno', 'magma', 'plasma', 'viridis', 'cubehelix', 'turbo', 'warm', 'cool', 'brbg', 'prgn', 'piyg', 'puor', 'rdbu', 'rdgy', 'rdylbu', 'rdylgn', 'spectral', 'burd', 'buylrd', 'rainbow', 'sinebow']
     if (calendarScheme !== "null") {
         if (d3Colors.includes(calendarScheme)) {
@@ -625,7 +615,7 @@ $(document).ready(function () {
     month = today.getMonth() + 1;
     day = today.getDate();
     endDay = year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
-    locales = {"zh-Hans": "zh", "zh-Hant": "zh-tw", "en": "en", "ja": "ja"};
+    locales = { "zh-Hans": "zh", "zh-Hant": "zh-tw", "en": "en", "ja": "ja" };
 
     axios.get(baseurl + "/stats.json").then(res => {
         stats_data = res.data;
@@ -706,9 +696,9 @@ $(document).ready(function () {
                 'domain': {
                     'type': 'year',
                     'gutter': 5,
-                    'label': {'text': (ts) => dayjs(ts).format("YYYY"), 'align': 'middle'}
+                    'label': { 'text': (ts) => dayjs(ts).format("YYYY"), 'align': 'middle' }
                 },
-                'subDomain': {'type': 'xMonth', 'width': 60, 'height': 36, 'gutter': 5, 'radius': 3},
+                'subDomain': { 'type': 'xMonth', 'width': 60, 'height': 36, 'gutter': 5, 'radius': 3 },
                 'range': 1,
             };
             var start_date = new Date(dayjs(endDay).startOf('year').add(1, 'month'))
@@ -734,8 +724,8 @@ $(document).ready(function () {
             cal.addTemplates(xYear);
             var paras = {
                 'format': 'YYYY',
-                'domain': {'type': 'year', 'gutter': 5, 'label': {'text': 'YYYY', 'align': 'middle'}},
-                'subDomain': {'type': 'xYear', 'width': 36, 'height': 36, 'gutter': 5, 'radius': 3},
+                'domain': { 'type': 'year', 'gutter': 5, 'label': { 'text': 'YYYY', 'align': 'middle' } },
+                'subDomain': { 'type': 'xYear', 'width': 36, 'height': 36, 'gutter': 5, 'radius': 3 },
                 'range': 6,
             };
             if (archive == "False") {
@@ -745,8 +735,8 @@ $(document).ready(function () {
         } else {
             var paras = {
                 'format': 'YYYY-MM-DD',
-                'domain': {'type': 'month', 'gutter': 5, 'label': {'text': 'MMM', 'align': 'start'}},
-                'subDomain': {'type': 'ghDay', 'width': 13, 'height': 13, 'gutter': 5, 'radius': 3},
+                'domain': { 'type': 'month', 'gutter': 5, 'label': { 'text': 'MMM', 'align': 'start' } },
+                'subDomain': { 'type': 'ghDay', 'width': 13, 'height': 13, 'gutter': 5, 'radius': 3 },
                 'range': 3,
             };
             var start_date = new Date(dayjs(endDay).subtract(paras.range - 1, 'month'))
@@ -812,8 +802,8 @@ $(document).ready(function () {
                     locale: locales[lang]
                 },
                 range: paras.range,
-                data: {source: source_data, x: 'date', y: 'count'},
-                scale: {color: cal_color}
+                data: { source: source_data, x: 'date', y: 'count' },
+                scale: { color: cal_color }
             },
             options
         );

@@ -8,12 +8,12 @@ type: page
 {% assign lang = page.lang | default: site.default_lang %}
 {% assign locales = site.data.locales[lang] %}
 <div class="g-banner home-banner {{ site.theme-color | prepend: 'banner-theme-' }}" data-theme="{{ site.theme-color }}"
-     style="{% if page.cover %}background: url({{ page.cover | relative_url }}) no-repeat center center; background-size: cover;{% endif %}">
+    style="{% if page.cover %}background: url({{ page.cover | relative_url }}) no-repeat center center; background-size: cover;{% endif %}">
     <h2>{{ page.home-title }}</h2>
     <h3>{{ page.description }}</h3>
     {% if page.cover_author %}
     <p class="meta-item">
-        <svg aria-hidden="true" class="icon">
+        <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-image"></use>
         </svg>
         {% if page.cover_author_link %}

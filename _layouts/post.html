@@ -7,7 +7,7 @@ type: post
 {% assign locales = site.data.locales[lang] %}
 {% assign post = locales.post %}
 <div class="g-banner post-header {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }} {% unless page.cover %}post-no-cover{% endunless %}"
-     data-theme="{{ site.theme-color }}">
+    data-theme="{{ site.theme-color }}">
     <div class="post-wrapper">
         <div class="post-tags">
             {% if page.tags.size > 0 %}
@@ -19,42 +19,40 @@ type: post
         <h1>{{ page.title }}</h1>
         <div class="post-meta">
             <span class="post-meta-item">
-                <svg aria-hidden="true" class="icon">
+                <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-user"></use>
                 </svg>
                 {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}
             </span>
-            <time %y-%m-%d class="post-meta-item" datetime="{{ page.date | date:"
-            " }}">
-            <svg aria-hidden="true" class="icon">
-                <use xlink:href="#icon-calendar"></use>
-            </svg>
-            <span class="create-at"></span>
+            <time class="post-meta-item" datetime="{{ page.date | date:" %y-%m-%d" }}">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-calendar"></use>
+                </svg>
+                <span class="create-at"></span>
             </time>
-            <time %y-%m-%d class="post-meta-item" datetime="{{ page.date | date:"
-            " }}">
-            <svg aria-hidden="true" class="icon">
-                <use xlink:href="#icon-update"></use>
-            </svg>
-            <span class="update-at"></span>
+            <time class="post-meta-item" datetime="{{ page.date | date:" %y-%m-%d" }}">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-update"></use>
+                </svg>
+                <span class="update-at"></span>
             </time>
             <span class="post-meta-item">
-                <svg aria-hidden="true" class="icon words">
+                <svg class="icon words" aria-hidden="true">
                     <use xlink:href="#icon-words"></use>
                 </svg>
                 {% assign total_size = page.content | strip_html | strip_newlines | remove: " " | size %}
                 {{ post.cover.total.info }} {% if total_size < 1000 %} {{ total_size }} {% else %} {{ total_size |
                     divided_by: 1000.0 | round: 1 }}k {% endif %} {{ post.cover.total.unit }} </span>
-            <span class="post-meta-item">
-                        <svg aria-hidden="true" class="icon time">
+                    <span class="post-meta-item">
+                        <svg class="icon time" aria-hidden="true">
                             <use xlink:href="#icon-time"></use>
                         </svg>
                         {{ post.cover.time.info }} {{ page.content | strip_html | strip_newlines | remove: " " | size |
                         divided_by: 350 | plus: 1 }} {{ post.cover.time.unit }}
                     </span>
-            {% if site.busuanzi %}
-            <span class="post-meta-item">
-                        <svg aria-hidden="true" class="icon pv">
+                    {% if site.busuanzi %}
+                    <span class="post-meta-item">
+                        <svg class="icon pv" aria-hidden="true">
                             <use xlink:href="#icon-pv"></use>
                         </svg>
                         {{ post.cover.view.info }} 
@@ -65,10 +63,10 @@ type: post
                         {% endif %}
                         {{ post.cover.view.unit }}
                     </span>
-            {% endif %}
-            {% if page.cover_author %}
-            <span class="post-meta-item">
-                        <svg aria-hidden="true" class="icon">
+                    {% endif %}
+                    {% if page.cover_author %}
+                    <span class="post-meta-item">
+                        <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-image"></use>
                         </svg>
                         {% if page.cover_author_link %}
@@ -78,13 +76,13 @@ type: post
                         {{ locales.cover }} {{ page.cover_author }}
                         {% endif %}
                     </span>
-            {% endif %}
+                    {% endif %}
         </div>
     </div>
     {% if page.cover %}
     <div class="filter"></div>
     <div class="post-cover"
-         style="background: url('{{ page.cover | relative_url }}') center no-repeat; background-size: cover;"></div>
+        style="background: url('{{ page.cover | relative_url }}') center no-repeat; background-size: cover;"></div>
     {% endif %}
 </div>
 
@@ -105,20 +103,20 @@ type: post
                     <p>
                         <span>{{ copyright.statement.name }}：</span>
                         {{ copyright.statement.left }}
-                        <a class="cplink" href="{{ site.url }}">{{ site.title }}</a>
+                        <a href="{{ site.url }}" class="cplink">{{ site.title }}</a>
                         {{ copyright.statement.middle }}
                     </p>
                     {% if site.cclicense %}
                     <p>
                         {{ copyright.statement.right1 }}
-                        <a class="extlinks" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC
                             BY-NC-SA 4.0</a>
                         {{ copyright.statement.right2 }}
                     </p>
                     {% endif %}
                     <p><span>{{ copyright.title }}：</span>《 {{ page.title }} 》</p>
-                    <p><span>{{ copyright.link }}：</span><a class="cplink" href="{{ page.url | prepend: site.url }}">{{
-                        page.url | prepend: site.url }}</a></p>
+                    <p><span>{{ copyright.link }}：</span><a href="{{ page.url | prepend: site.url }}" class="cplink">{{
+                            page.url | prepend: site.url }}</a></p>
                     <p class="tips">{{ copyright.statement.outdate1 }} <span></span> {{ copyright.statement.outdate2 }}
                     </p>
                 </div>
@@ -126,14 +124,14 @@ type: post
         </div>
         {% if page.content contains 'h1' or page.content contains 'h2' or page.content contains 'h3' or page.content
         contains 'h4' or page.content contains 'h5' or page.content contains 'h6' and site.toc %}
-        <div class="table-of-contents">
-            <div class="toc-header"><h2>{{ post.outline }}</h2></div>
-            <div class="toc-body">
-                {% include layouts/toc.html html=content %}
-            </div>
-            {% else %}
+            <div class="table-of-contents">
+                <div class="toc-header"><h2>{{ post.outline }}</h2></div>
+                <div class="toc-body">
+                    {% include layouts/toc.html html=content %}
+                </div>
+        {% else %}
             <div class="table-of-contents hidden">
-                {% endif %}
+        {% endif %}
             </div>
         </div>
         {% include plugins/others/social_block.html %}
@@ -142,7 +140,7 @@ type: post
 <section class="author-detail">
     <section class="post-footer-item author-card">
         <div class="avatar">
-            <img alt="" src="{{ site.avatar | relative_url }}">
+            <img src="{{ site.avatar | relative_url }}" alt="">
         </div>
         <div class="author-name" rel="author">{{ site.author }}</div>
         <div class="bio">
@@ -152,8 +150,8 @@ type: post
         <ul class="sns-links">
             {% for s in site.sns %}
             <li>
-                <a aria-label="{{ s[0] }}" href="{{ s[1] }}" target="_blank">
-                    <svg aria-hidden="true" class="icon">
+                <a href="{{ s[1] }}" target="_blank" aria-label="{{ s[0] }}">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-{{ s[0] }}"></use>
                     </svg>
                 </a>
@@ -165,29 +163,29 @@ type: post
     <section class="post-footer-item read-next">
         {% if page.next.url %}
         <div class="read-next-item">
-            <a aria-label="{{ page.next.title }}" class="read-next-link" href="{{ page.next.url | relative_url }}"></a>
+            <a href="{{ page.next.url | relative_url }}" class="read-next-link" aria-label="{{ page.next.title }}"></a>
             <section>
                 <span>{{ page.next.title }}</span>
                 <p>{{ page.next.excerpt | strip_html | strip_newlines | truncate: 60}}</p>
             </section>
             {% if page.next.cover %}
             <div class="filter"></div>
-            <img alt="" src="{{ page.next.cover | relative_url }}">
+            <img src="{{ page.next.cover | relative_url }}" alt="">
             {% endif %}
         </div>
         {% endif %}
 
         {% if page.previous.url %}
         <div class="read-next-item">
-            <a aria-label="{{ page.previous.title }}" class="read-next-link"
-               href="{{ page.previous.url | relative_url }}"></a>
+            <a href="{{ page.previous.url | relative_url }}" class="read-next-link"
+                aria-label="{{ page.previous.title }}"></a>
             <section>
                 <span>{{ page.previous.title }}</span>
                 <p>{{ page.previous.excerpt | strip_html | strip_newlines | truncate: 60}}</p>
             </section>
             {% if page.previous.cover %}
             <div class="filter"></div>
-            <img alt="" src="{{ page.previous.cover | relative_url }}">
+            <img src="{{ page.previous.cover | relative_url }}" alt="">
             {% endif %}
         </div>
         {% endif %}

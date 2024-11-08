@@ -389,7 +389,7 @@
           visibility: hidden;
         }
 
-        .cmn-toggle + label {
+        .cmn-toggle+label {
           display: block;
           position: relative;
           cursor: pointer;
@@ -397,7 +397,7 @@
           user-select: none;
         }
 
-        input.cmn-toggle-round-flat + label {
+        input.cmn-toggle-round-flat+label {
           padding: 2px;
           width: 40px;
           height: 20px;
@@ -406,14 +406,14 @@
           transition: background 0.4s;
         }
 
-        input.cmn-toggle-round-flat + label:before,
-        input.cmn-toggle-round-flat + label:after {
+        input.cmn-toggle-round-flat+label:before,
+        input.cmn-toggle-round-flat+label:after {
           display: block;
           position: absolute;
           content: "";
         }
 
-        input.cmn-toggle-round-flat + label:before {
+        input.cmn-toggle-round-flat+label:before {
           top: 2px;
           left: 2px;
           bottom: 2px;
@@ -423,7 +423,7 @@
           transition: background 0.4s;
         }
 
-        input.cmn-toggle-round-flat + label:after {
+        input.cmn-toggle-round-flat+label:after {
           top: 4px;
           left: 4px;
           bottom: 4px;
@@ -433,11 +433,11 @@
           transition: margin 0.4s, background 0.4s;
         }
 
-        input.cmn-toggle-round-flat:checked + label {
+        input.cmn-toggle-round-flat:checked+label {
           background-color: #FFCE69;
         }
 
-        input.cmn-toggle-round-flat:checked + label:after {
+        input.cmn-toggle-round-flat:checked+label:after {
           margin-left: 20px;
           background-color: #FFCE69;
         }
