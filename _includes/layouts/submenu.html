@@ -1,0 +1,31 @@
+{% if page.submenu %}
+<div class="submenu">
+    {% for collection in site.data.collections %}
+    {% if collection.id == page.submenu %}
+    <h4>
+        <svg aria-hidden="true" class="icon">
+            <use xlink:href="#icon-submenu"></use>
+        </svg>
+        {{ collection.name }}
+    </h4>
+    <ul>
+        {% for article in collection.articles %}
+        <li>
+            {% if article.url contains "://" %}
+            <a class="extlinks" href="{{ article.url }}">
+                {{ article.name }}
+            </a>
+            {% else %}
+            <a href="{{ article.url | prepend: site.baseurl }}">
+                {{ article.name }}
+            </a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+    {% else %}
+    <div class="submenu hidden">
+        {% endif %}
+    </div>

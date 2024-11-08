@@ -1,0 +1,73 @@
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta content="{{ site.author }}" name="author">
+    {% if layout.type == "post" %}
+    <meta content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" name="description">
+    <meta content="{% if page.tags.size > 0 %}{% for tag in page.tags  %}{{ tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}"
+          name="keywords">
+    {% if page.next.url %}
+    <meta content="{{ page.next.url | relative_url }}" property="og:previous_url">
+    {% endif %}
+    {% if page.previous.url %}
+    <meta content="{{ page.previous.url | relative_url }}" property="og:next_url">
+    {% endif %}
+    {% else %}
+    <meta content="{{ site.description }}" name="description">
+    <meta content="{{ site.keyword }}" name="keywords">
+    {% endif %}
+    <meta content="{{ site.formats.time }}" property="post-date-format">
+    {% case site.formats.time %}
+    {% when 0 %}
+    <meta content="{{ page.date | date: '%Y-%m-%d %H:%M:%S %z' }}" property="post-date"/>
+    {% when 1 %}
+    <meta content="{{ page.date | date_to_rfc822 }}" property="post-date"/>
+    {% else %}
+    <meta content="{{ page.date | date: '%Y年%-m月%-d日 %H:%M:%S %z'  }}" property="post-date"/>
+    {% endcase %}
+    {% if site.calendar %}
+    <meta content="{{ site.calendar.scale | default: 'year' }}" property="calendar-scale"/>
+    <meta content="{{ site.calendar.scheme | default: 'null' }}" property="calendar-scheme"/>
+    <meta content="{{ site.calendar.color | default: 'null' }}" property="calendar-color"/>
+    {% endif %}
+    <!-- Open Graph -->
+    <meta content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}"
+          property="og:title">
+    <meta content="website" property="og:type">
+    <meta content="{{ page.url | prepend: site.url }}" property="og:url">
+    <meta content="{{ site.baseurl }}" property="og:baseurl">
+    <meta content="{{ site.description }}" property="og:description">
+    <meta content="{{ site.title }}" property="og:site_name">
+    <meta content="{{ site.gray }}" property="og:gray">
+    <meta content="{{ lang }}" property="og:lang">
+    {% if site.alivetime %}
+    <meta content="{{ site.alivestart }}" name="alivestart">
+    {% endif %}
+    {% if site.google_search %}
+    <meta content="{{ site.google_search }}" name="google-site-verification"/>
+    {% endif %}
+    <meta content="{{ site.pwa.color }}" name="theme-color"/>
+    <link href="{{ " rel="manifest"
+    /manifest.json" | prepend: site.baseurl }}" />
+    <link href="{{ " rel="apple-touch-icon"
+    /assets/img/touch/apple-touch-icon.png" | prepend: site.baseurl }}" />
+    <link href="{{ site.favicon | prepend: site.baseurl }}" rel="Shortcut Icon">
+    <link href="{{ site.favicon | prepend: site.baseurl }}" rel="icon" type="image/x-icon"/>
+    <link href="{{ site.favicon | prepend: site.baseurl }}" rel="bookmark" type="image/x-icon"/>
+    <link async href="https://cdn.jsdelivr.net/npm/normalize.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont/style.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.min.css" rel="stylesheet">
+    {% if layout.type == "post" %}
+    {% include plugins/others/social_css.html%}
+    {% include plugins/markdown/fancybox_css.html %}
+    {% else %}
+    {% include plugins/others/calendar_css.html %}
+    {% endif %}
+    {% include plugins/markdown/prism_css.html %}
+    {% include plugins/comments/waline_css.html %}
+    {% include plugins/search/docsearch_css.html %}
+    <link href="{{ " rel="stylesheet"
+    /assets/css/app.min.css" | prepend: site.baseurl }}">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>

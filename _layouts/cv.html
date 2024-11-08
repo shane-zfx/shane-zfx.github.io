@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="{{site.language}}">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta content="{{ site.author }}" name="author">
+    <meta content="{{ site.description }}" name="description">
+    <meta content="{{ site.keyword }}" name="keywords">
+    <!-- Open Graph -->
+    <meta content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}"
+          property="og:title">
+    <meta content="website" property="og:type">
+    <meta content="{{ page.url | prepend: site.url }}" property="og:url">
+    <meta content="{{ site.baseurl }}" property="og:baseurl">
+    <meta content="{{ site.description }}" property="og:description">
+    <meta content="{{ site.title }}" property="og:site_name">
+    <meta content="{{ site.gray }}" property="og:gray">
+    {% if site.google_search %}
+    <meta content="{{ site.google_search }}" name="google-site-verification"/>
+    {% endif %}
+    <link href="{{ " rel="apple-touch-icon"
+    /assets/img/touch/apple-touch-icon.png" | prepend: site.baseurl }}" />
+    <link href="{{ site.favicon | prepend: site.baseurl }}" rel="Shortcut Icon">
+    <link href="{{ site.favicon | prepend: site.baseurl }}" rel="icon" type="image/x-icon"/>
+    <link href="{{ site.favicon | prepend: site.baseurl }}" rel="bookmark" type="image/x-icon"/>
+    <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" rel="stylesheet"/>
+    <link href="{{ " rel="stylesheet"
+    /assets/css/cv.min.css" | prepend: site.baseurl }}">
+</head>
+<body>
+{% assign cv_index = 1 %}
+{% for cv in site.data.cv %}
+<div class="container">
+    <header>
+        <h1 class="title">{{ cv.name }}</h1>
+        {% if cv.motivation %}
+        <h3 class="motivation"><span class="mtitle">{% if cv.lang == "zh" %}目标岗位：{% else %} Job: {% endif %}</span>{{
+            cv.motivation }}</h3>
+        {% endif %}
+        <div class="labels">
+            <input class="toggle-dark" id="switch" name="mode" type="checkbox">
+            <label for="switch">
+                <svg class="feather feather-moon" fill="var(--fg-color)" height="24" id="moon{{ cv_index }}"
+                     stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                     viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    {% assign cv_index = cv_index | plus: 1 %}
+                    <svg class="feather feather-moon" fill="var(--fg-color-dark)" height="24" stroke="currentColor"
+                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                         width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </svg>
+            </label>
+            <input class="toggle-font" id="font" name="font" type="checkbox">
+            <label for="font">
+                <svg class="feature feature-type" fill="none" height="24" id="font" stroke="currentColor" stroke-linecap="round"
+                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                    <polyline points="4 7 4 4 20 4 20 7"></polyline>
+                    <line x1="9" x2="15" y1="20" y2="20"></line>
+                    <line x1="12" x2="12" y1="4" y2="20"></line>
+                </svg>
+            </label>
+        </div>
+    </header>
+    <div class="container-block">
+        <aside class="sidebar">
+            {% if cv.photo %}
+            <section class="photo">
+                <img alt="" src="{{ cv.photo | prepend: site.baseurl }}">
+            </section>
+            {% endif %}
+            <section class="contact">
+                <div class="title">{% if cv.lang == "zh" %}基本信息{% else %} CONTACT {% endif %}</div>
+                {% if cv.email %}
+                <section class="contact-item">
+                    <svg class="feather feather-mail" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <a href="mailto:{{ cv.email }}">{{ cv.email }}</a>
+                </section>
+                {% endif %}
+                {% if cv.github %}
+                <section class="contact-item">
+                    <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    <a href="https://github.com/{{ cv.github }}" target="_blank">{{ cv.github }}</a>
+                </section>
+                {% endif %}
+                {% if cv.linkedin %}
+                <section class="contact-item">
+                    <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect height="12" width="4" x="2" y="9"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    <a href="https://www.linkedin.com/in/{{ cv.linkedin }}" target="_blank">{{ cv.linkedin }}</a>
+                </section>
+                {% endif %}
+                {% if cv.website %}
+                <section class="contact-item">
+                    <svg class="feather feather-globe" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" x2="22" y1="12" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <a href="{{ cv.website }}" target="_blank">{{ cv.website }}</a>
+                </section>
+                {% endif %}
+            </section>
+            {% if cv.languages %}
+            <section class="languages">
+                <div class="title">{% if cv.lang == "zh" %}语言能力{% else %} LANGUAGES {% endif %}</div>
+                {% for language in cv.languages %}
+                <div class="idiom">{{ language.idiom }}</div>
+                {% endfor %}
+            </section>
+            {% endif %}
+            {% if cv.educations %}
+            <section class="education">
+                <div class="title">{% if cv.lang == "zh" %}教育经历{% else %} EDUCATION {% endif %}</div>
+                {% for education in cv.educations %}
+                <div class="education-item">
+                    <div class="degree">{{ education.degree }}</div>
+                    <div class="university">{{ education.university }}</div>
+                    <div class="time">{{ education.time }}</div>
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+            {% if cv.skills %}
+            <section class="skills">
+                {% for r in cv.skills %}
+                <div class="title">{{ r.title }}</div>
+                {% for s in r.skill %}
+                <div class="skill">{{ s }}</div>
+                {% endfor %}
+                {% endfor %}
+            </section>
+            {% endif %}
+        </aside>
+        <article>
+            {% if cv.experience %}
+            <section class="experience">
+                <h2 class="title">{% if cv.lang == "zh" %}实践和研究经历{% else %} Practices & Researches {% endif
+                    %}</h2>
+                {% for e in cv.experience %}
+                <div class="experience-item">
+                    <div class="role"> {{ e.role }}</div>
+                    <div class="company">
+                        {{ e.company }} <span class="time">{{ e.time }}</span>
+                    </div>
+                    <div class="details">
+                        {{ e.details }}
+                    </div>
+                    <p class="technologies">
+                        {{ e.tech }}
+                    </p>
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+            {% if cv.honors %}
+            <section class="honors">
+                <div class="title">{% if cv.lang == "zh" %}奖项荣誉{% else %}Honors{% endif %}</div>
+                <div class="honor-items">
+                    {% for honor in cv.honors %}
+                    <div class="honor">{{ honor }}</div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+            {% if cv.publications %}
+            <section class="publications">
+                <div class="title">{% if cv.lang == "zh" %}论文发表{% else %}Publications{% endif %}</div>
+                <ol class="publications-item">
+                    {% for p in cv.publications %}
+                    <li class="publication">{{ p }}</li>
+                    {% endfor %}
+                </ol>
+            </section>
+            {% endif %}
+            {% if cv.introduction %}
+            <section class="introduction">
+                <div class="title">{% if cv.lang == "zh" %}研究简介{% else %}Introduction{% endif %}</div>
+                {% for c in cv.introduction %}
+                <div class="content"><span class="ititle">{{ c.title }}</span>{{ c.content }}</div>
+                {% endfor %}
+            </section>
+            {% endif %}
+        </article>
+    </div>
+</div>
+{% endfor %}
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+    var checkbox = document.querySelector('input[name=mode]');
+    checkbox.addEventListener('change', function () {
+        if (this.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            var moon1 = document.getElementById('moon1');
+            var moon2 = document.getElementById('moon2');
+            moon1.innerHTML = feather.icons['sun'].toSvg({'fill': 'var(--fg-color-dark)'});
+            moon2.innerHTML = feather.icons['sun'].toSvg({'fill': 'var(--fg-color-dark)'});
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            var moon1 = document.getElementById('moon1');
+            var moon2 = document.getElementById('moon2');
+            moon1.innerHTML = feather.icons['moon'].toSvg({'fill': 'var(--fg-color-dark)'});
+            moon2.innerHTML = feather.icons['moon'].toSvg({'fill': 'var(--fg-color-dark)'});
+        }
+    })
+    var checkbox2 = document.querySelector('input[name=font]');
+    checkbox2.addEventListener('change', function () {
+        if (this.checked) {
+            document.documentElement.setAttribute('data-font', 'normal');
+        } else {
+            document.documentElement.setAttribute('data-font', 'lxgw');
+        }
+    })
+
+</script>
+</body>
+</html>

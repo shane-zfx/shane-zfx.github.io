@@ -8,9 +8,8 @@
 title: 'Cosmos'
 description: '备忘录'
 keyword: 'memorandum'
-url: '' # your host
+url: 'shane21.com' # your host
 baseurl: ''
-theme: jekyll-theme-h2o-ac
 favicon: "/assets/image/favicon/favicon.ico"
 
 ##------------------------------------------------------ 个人信息 -----------------------------------------------------##
@@ -27,7 +26,7 @@ sns:
 theme-color: default                                                      # 站点主题色，默认（蓝色，default）和粉色（pink）
 postPatters: 'circuitBoard'                                               # 页面封面默认模式，仅在未定义封面图时生效。支持 circuitBoard，overlappingCircles，food，glamorous，ticTacToe，seaOfClouds 五种
 nightMode: true                                                           # 夜间模式是否默认开启
-tos:                                                                      # 站点服务条款链接
+tos: ''                                                                     # 站点服务条款链接
 permalink: /:categories/:title.html                                       # 文章页自动生成规则
 mathjax: true                                                             # 是否开启 MathJax 公式支持
 RSS: true                                                                 # 是否开启 RSS 生成，robots.txt 和 sitemap.xml 文件。
