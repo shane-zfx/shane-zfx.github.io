@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html data-theme="light" lang="{{site.language}}">
+<html lang="{{site.language}}" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta content="{{ site.author }}" name="author">
-    <meta content="{{ site.description }}" name="description">
-    <meta content="{{ site.keyword }}" name="keywords">
+    <meta name="author"  content="{{ site.author }}">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords"  content="{{ site.keyword }}">
     <!-- Open Graph -->
-    <meta content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}"
-          property="og:title">
-    <meta content="website" property="og:type">
-    <meta content="{{ page.url | prepend: site.url }}" property="og:url">
-    <meta content="{{ site.baseurl }}" property="og:baseurl">
-    <meta content="{{ site.description }}" property="og:description">
-    <meta content="{{ site.title }}" property="og:site_name">
-    <meta content="{{ site.gray }}" property="og:gray">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+    <meta property="og:baseurl" content="{{ site.baseurl }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:gray" content="{{ site.gray }}">
     {% if site.google_search %}
-    <meta content="{{ site.google_search }}" name="google-site-verification"/>
+    <meta name="google-site-verification" content="{{ site.google_search }}" />
     {% endif %}
-    <link href="{{ " rel="apple-touch-icon"
-    /assets/img/touch/apple-touch-icon.png" | prepend: site.baseurl }}" />
-    <link href="{{ site.favicon | prepend: site.baseurl }}" rel="Shortcut Icon">
-    <link href="{{ site.favicon | prepend: site.baseurl }}" rel="icon" type="image/x-icon"/>
-    <link href="{{ site.favicon | prepend: site.baseurl }}" rel="bookmark" type="image/x-icon"/>
-    <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" rel="stylesheet"/>
-    <link href="{{ " rel="stylesheet"
-    /assets/css/cv.min.css" | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon" href="{{ "/assets/img/touch/apple-touch-icon.png" | prepend: site.baseurl }}" />
+    <link rel="Shortcut Icon" href="{{ site.favicon | prepend: site.baseurl }}">
+    <link rel="icon" href="{{ site.favicon | prepend: site.baseurl }}" type="image/x-icon" />
+    <link rel="bookmark" href="{{ site.favicon | prepend: site.baseurl }}" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="{{ "/assets/css/cv.min.css" | prepend: site.baseurl }}">
 </head>
 <body>
 {% assign cv_index = 1 %}
@@ -35,31 +32,19 @@
     <header>
         <h1 class="title">{{ cv.name }}</h1>
         {% if cv.motivation %}
-        <h3 class="motivation"><span class="mtitle">{% if cv.lang == "zh" %}目标岗位：{% else %} Job: {% endif %}</span>{{
-            cv.motivation }}</h3>
+        <h3 class="motivation"><span class="mtitle">{% if cv.lang == "zh" %}目标岗位：{% else %} Job: {% endif %}</span>{{ cv.motivation }}</h3>
         {% endif %}
         <div class="labels">
-            <input class="toggle-dark" id="switch" name="mode" type="checkbox">
+            <input type="checkbox" id="switch" name="mode" class="toggle-dark">
             <label for="switch">
-                <svg class="feather feather-moon" fill="var(--fg-color)" height="24" id="moon{{ cv_index }}"
-                     stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                     viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="var(--fg-color)" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon" id="moon{{ cv_index }}">
                     {% assign cv_index = cv_index | plus: 1 %}
-                    <svg class="feather feather-moon" fill="var(--fg-color-dark)" height="24" stroke="currentColor"
-                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                         width="24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="var(--fg-color-dark)" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </svg>
             </label>
-            <input class="toggle-font" id="font" name="font" type="checkbox">
+            <input type="checkbox" id="font" name="font" class="toggle-font">
             <label for="font">
-                <svg class="feature feature-type" fill="none" height="24" id="font" stroke="currentColor" stroke-linecap="round"
-                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
-                    <polyline points="4 7 4 4 20 4 20 7"></polyline>
-                    <line x1="9" x2="15" y1="20" y2="20"></line>
-                    <line x1="12" x2="12" y1="4" y2="20"></line>
-                </svg>
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feature feature-type" id="font"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
             </label>
         </div>
     </header>
@@ -67,53 +52,32 @@
         <aside class="sidebar">
             {% if cv.photo %}
             <section class="photo">
-                <img alt="" src="{{ cv.photo | prepend: site.baseurl }}">
+                <img src="{{ cv.photo | prepend: site.baseurl }}" alt="">
             </section>
             {% endif %}
             <section class="contact">
                 <div class="title">{% if cv.lang == "zh" %}基本信息{% else %} CONTACT {% endif %}</div>
                 {% if cv.email %}
                 <section class="contact-item">
-                    <svg class="feather feather-mail" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     <a href="mailto:{{ cv.email }}">{{ cv.email }}</a>
                 </section>
                 {% endif %}
                 {% if cv.github %}
                 <section class="contact-item">
-                    <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     <a href="https://github.com/{{ cv.github }}" target="_blank">{{ cv.github }}</a>
                 </section>
                 {% endif %}
                 {% if cv.linkedin %}
                 <section class="contact-item">
-                    <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect height="12" width="4" x="2" y="9"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     <a href="https://www.linkedin.com/in/{{ cv.linkedin }}" target="_blank">{{ cv.linkedin }}</a>
                 </section>
                 {% endif %}
                 {% if cv.website %}
                 <section class="contact-item">
-                    <svg class="feather feather-globe" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" x2="22" y1="12" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                     <a href="{{ cv.website }}" target="_blank">{{ cv.website }}</a>
                 </section>
                 {% endif %}
@@ -152,11 +116,10 @@
         <article>
             {% if cv.experience %}
             <section class="experience">
-                <h2 class="title">{% if cv.lang == "zh" %}实践和研究经历{% else %} Practices & Researches {% endif
-                    %}</h2>
+                <h2 class="title">{% if cv.lang == "zh" %}实践和研究经历{% else %} Practices & Researches {% endif %}</h2>
                 {% for e in cv.experience %}
                 <div class="experience-item">
-                    <div class="role"> {{ e.role }}</div>
+                    <div class="role"> {{ e.role }} </div>
                     <div class="company">
                         {{ e.company }} <span class="time">{{ e.time }}</span>
                     </div>
@@ -205,8 +168,8 @@
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 <script>
     var checkbox = document.querySelector('input[name=mode]');
-    checkbox.addEventListener('change', function () {
-        if (this.checked) {
+    checkbox.addEventListener('change', function() {
+        if(this.checked) {
             document.documentElement.setAttribute('data-theme', 'dark');
             var moon1 = document.getElementById('moon1');
             var moon2 = document.getElementById('moon2');
@@ -221,8 +184,8 @@
         }
     })
     var checkbox2 = document.querySelector('input[name=font]');
-    checkbox2.addEventListener('change', function () {
-        if (this.checked) {
+    checkbox2.addEventListener('change', function() {
+        if(this.checked) {
             document.documentElement.setAttribute('data-font', 'normal');
         } else {
             document.documentElement.setAttribute('data-font', 'lxgw');
