@@ -1,120 +1,174 @@
-# Base blog settings
-baseurl                      : "" # the subpath of your site,                         # e.g. /blog/
-                              # set to '' in case of hosting on GitHub
-url                          : "" # the base hostname & protocol for your site
-                                  # `http://<username>.github.io` - for GitHub
+# Site settings 配置站点
+title: 'Cosmos'
+description: '备忘录'
+keyword: 'memorandum'
+url: '' # your host
 
-blog:
-  title                      : cosmos
-  description                  : >
-                               this should contain a proper description 这是一段描述
+# when build blog on server, if you don't need baseurl, you should leave this value blank.
+# 在服务器上建站时，如果你不需要子域名，请将这一格留空
+# if you're using GitHub Pages, set baseurl to your blog's .
+# 如果你在使用 GitHub Pages, 请将 baseurl 设置为你的网址的子域名
+# for example, if your site is "kaeyleo.github.io", then this url should leave blank.
+# 例如，当你的域名是 "kaeyleo.github.io"  时，这个 url 需要留空
+# but if your created a repo named "myblog", and the site is "kaeyleo.github.io/myblog", change baseurl to '/myblog'
+# 但是，如果你创建了一个叫 "myblog" 的网站，此时网址会变成 "kaeyleo.github.io/myblog" ，这时再将 baseurl 设置为 '/myblog'
+baseurl: ''
+theme: jekyll-theme-h2o-ac
 
-# Layout configuration
-  logo_path                  : "assets/img/dactl.svg" # path to logo file
-  search_path                : # "yourgitusername.github.io"
-                               # needed for searchbox in archive page
-  hero_layout                : true # turn on hero layout for blog and posts
-  hero_placeholder           : "assets/img/generic_hero.jpg" # placeholder for hero image
-  excerpts                   : true # show excerpts instead of full post content on blog page
-  inline_footnotes           : true # enable/disable barefoot inline footnotes
-  titles_only                : false # show post titles only on main blog page
+# Internalization 国际化
+languages: ["zh-Hans", "zh-Hant", "en", "ja"]
+default_lang: "zh-Hans"
 
-# Fonts
-  font                       : '"Noto Sans SC", "PingFang SC", "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif'
-  load_google_fonts          : 'Rubik:400,400italic,700,700italic'
+# PWA
+pwa:
+  color: '#81BBFF'
+  short_name: 'lisz'
 
+# Navigation links
+nav:
+  home: '/'
+  blog: '/blog/index.html'
+  archives: '/archives.html'
+  tags: '/tags.html'
+  about:
+    logs: '/logs.html'
+    tos: '/tos.html'
+    RSS: '/feed.xml'
+    CV: '/cv.html'
+    links: '/links.html'
 
-# Author info
-author:
-  fullname                  : shane.z
-  rss                       : true # generate RSS feed and show it's icon in header
-  mail                      : your@email.com # change to your e-mail address
-  twitter                   : xxx
-  github                    : xxx
-  youtube                   : xxx
-  stackoverflow             : stackoverflow-user-name
-  disqus                    : dactl # your disqus site name
-  google_analytics          : # 'UA-XXXXXXXX-X'
-  photo                     : "uploads/me2.png"
-  photo2x                   : "uploads/me.png"
+# Gray for the whole site 全站灰色
+gray: false
 
+# Formats
+# 时间格式（Time format）：0 -- 2022-04-29    1 -- 29 Apr 2022   2 -- 2022年4月29日
+formats:
+  time: 0
 
+# Favicon
+favicon: "/favicon.ico"
 
-## !!
-## Advanced blog settings
-## You should not change anything here unless you know what you are doing
+# Footer
+footer:
+  since: 2015
 
-# Gems
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+# Author 配置博主信息
+author: 'zhonger'
+nickname: 'zhonger'
+bio: '全栈开发者，热爱前端、运维和架构设计'
+avatar: '/assets/img/profile.webp'
 
-# Permalinks
-permalink                    : posts/:slug
+# Search
+search: true
 
-# Posts
-excerpt_separator            : <!–-break-–>
+# Night mode
+nightMode: false
 
-# Pagination
-paginate                     : 5
-paginate_path                : '/page-:num/'
+# Comments 评论功能
+comments:
+  disqus: false
+  disqus_url: 'https://liaokeyu.disqus.com/embed.js'
+  waline: false
+  waline_url: 'https://h2o-ac-waline.vercel.app'
 
-# Tags
-collections:
-  my_tags:
-    output: true
-    permalink: /tag/:slug/
-defaults:
-  -
-    scope:
-      path: ""
-      type: my_tags
-    values:
-      layout: blog-by-tag
+# MathJax 公式支持 by Ray-Eldath
+mathjax: true
 
-# Handling Reading
-exclude                    : ["README.md", "README.html"]
+# Share
+social-share: true
+social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
 
-# https://github.com/jekyll/jekyll/issues/4619
-# Markdown and highlighter settings
+# theme color 主题皮肤
+theme-color: 'default'  # pink or default
+
+# Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
+postPatterns: 'circuitBoard'
+
+# SNS settings 配置社交网站
+# url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
+sns:
+  google-scholar: 'https://scholar.google.com/citations?user=AUupIooAAAAJ'
+  researchgate: 'https://www.researchgate.net/profile/Shengzhou-Li'
+  ORCID: 'https://orcid.org/0000-0001-6973-3825'
+  github: 'https://github.com/zhonger'
+  linkedin: 'https://www.linkedin.com/in/shengzhouli/'
+  segmentfault: 'https://segmentfault.com/u/wuwozhonger'
+
+# Links 友情链接
+links:
+  'Mr Li': 'https://lisz.me'
+
+# Beian 备案号
+beian: '沪ICP备xxxxxxxx号'
+
+# CC License
+cclicense: true
+
+# CNZZ Analytics
+# cnzz: 1234567891
+cnzz:
+
+# Busuanzi Analytics
+busuanzi: true
+
+# Umami Analytics
+umami:
+  status:
+  id:
+  js:
+
+# Google Analytics
+# google_analytics: UA-XXXXXXXXX-X
+google_analytics:
+
+# Google Search
+google_search:
+
+# Tags 设置标签
+recommend-tags: true # whether or not display recommend-tags on the sidebar
+recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
+
+# Build settings
+pagination:
+  enabled: true
+  per_page: 10
+# paginate: 10
+# paginate_path: 'blog/page:num'
+
+# Markdown
 markdown: kramdown
-# !github-pages! mandatory › https://help.github.com/articles/using-jekyll-with-pages/#configuration-settings-you-cannot-change
-# Since Jekyll 3 the default highlighter is Rouge (replaced Pygments.rb in v44)
 highlighter: rouge
-
-# More › http://kramdown.gettalong.org/quickref.html
-# Options › http://kramdown.gettalong.org/options.html
 kramdown:
-  input:          GFM
-  # https://github.com/jekyll/jekyll/pull/4090
-  syntax_highlighter: rouge
+  input: GFM
+prism:
+  theme:
+  line_numbers: true
 
-  # Rouge Highlighter in Kramdown › http://kramdown.gettalong.org/syntax_highlighter/rouge.html
-  # span, block element options fall back to global
-  syntax_highlighter_opts:
-    # Rouge Options › https://github.com/jneen/rouge#full-options
-    # css_class: 'highlight'
-    #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+# RSS
+RSS: true
 
-# Sass settings
-sass:
-  sass_dir                : _sass
-  style                   : compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+# Permalink
+# See: https://github.com/kaeyleo/jekyll-theme-H2O/issues/35
+permalink: /:categories/:title.html
 
-# HTML Compression
-# - http://jch.penibelst.de/
-compress_html:
-  clippings               : all
-  endings                 : all
-  comments                : ["<!-- ", " -->"]
-  blanklines              : true
-  profile                 : false
-  ignore:
-  envs                    : [local]
+# TOC
+toc: true
 
+# Mermaid
+mermaid: true
 
+# Webpusher
+webpusher: false
+
+# Foreverblog
+foreverblog: true
+
+# Wormhole
+wormhole: true
+
+# NotByAI
+notbyAI: true
+
+# Alive time
+alivetime: true
+alivestart: "12/23/2021"
