@@ -5,7 +5,7 @@
 # 例如，当你的域名是 "kaeyleo.github.io"  时，这个 url 需要留空
 # 但是，如果你创建了一个叫 "myblog" 的网站，此时网址会变成 "kaeyleo.github.io/myblog" ，这时再将 baseurl 设置为 '/myblog'
 
-title: 'Cosmos'
+title: 'Memo.z'
 description: '备忘录'
 keyword: 'memorandum'
 url: 'shane21.com' # your host
@@ -24,10 +24,10 @@ sns:
 
 ##------------------------------------------------------ 功能信息 -----------------------------------------------------##
 theme-color: default                                                      # 站点主题色，默认（蓝色，default）和粉色（pink）
-postPatters: 'circuitBoard'                                               # 页面封面默认模式，仅在未定义封面图时生效。支持 circuitBoard，overlappingCircles，food，glamorous，ticTacToe，seaOfClouds 五种
+postPatterns: 'food'                                                      # 文章封面默认模式，仅在未定义封面图时生效。支持 circuitBoard，overlappingCircles，food，glamorous，ticTacToe，seaOfClouds 五种
 nightMode: true                                                           # 夜间模式是否默认开启
-tos: ''                                                                     # 站点服务条款链接
-permalink: /:categories/:title.html                                       # 文章页自动生成规则
+tos: ''                                                                   # 站点服务条款链接
+permalink: /:categories/:title                                            # 文章页自动生成规则
 mathjax: true                                                             # 是否开启 MathJax 公式支持
 RSS: true                                                                 # 是否开启 RSS 生成，robots.txt 和 sitemap.xml 文件。
 timezone: Asia/Shanghai                                                   # 默认时区
@@ -36,15 +36,24 @@ formats:
 
 nav:                                                                      # 顶部导航栏，键值对定义显示名称与链接，可以是中文名（需使用引号）
   home: '/'
-  blog: '/blog/index.html'
-  archives: '/archives.html'
-  tags: '/tags.html'
-  about: '/about.html'
+  blog: '/blog/index'
+  archives: '/archives'
+  tags: '/tags'
+  about: '/about'
 
 links:                                                                    # 侧边栏配置，友情链接（侧边栏），键值对定义显示名称与链接，可以是中文名（需使用引号）。
 calendar: true                                                            # 是否开启文章发表日历（侧边栏与归档页）
 recommend-tags: true                                                      # 是否显示推荐便签
 recommend-condition-size: 12                                              # 显示推荐标签数量
+
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: 'page:num/'
+  title: ':title | :num of :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
 
 footer:                                                                   # 底部版权栏
   since: 2024                                                             # 站点建站年份，用于显示版权起始时间。
@@ -71,7 +80,11 @@ github:                                                                   # 文�
 
 toc: true                                                                 # 是否开启文章页目录导航
 social-share: true                                                        # 是否开启社交分享
-social-share-items: [ 'wechat', 'weibo', 'douban', 'twitter' ]            # 社交分享列表
+social-share-items:                                                       # 社交分享列表
+  - wechat
+  - twitter
+  - facebook
+  - linkedin
 
 markdown: kramdown                                                        # Markdown 语法解析器
 kramdown:                                                                 # Markdown 语法解析器配置
@@ -125,11 +138,11 @@ plugins: [ jekyll-paginate-v2, jekyll-feed, jekyll-sitemap, premonition, h2o-ac-
 exclude: [ 'node_modules', 'dev', 'package.json', 'webpack.config.js', '.gitignore', 'README.md', '*.gemspec', '*.gem' ]
 
 
-webpusher: '{GIVEN WEBPUSHER ID}'                                         # 动态消息、通知推送，定义时自动开启。
+webpusher:                                                                # 动态消息、通知推送，定义时自动开启。
 
 pwa:
   color: '#81BBFF'                                                        # 主题色
-  short_name: 'cosmos'                                                    # 应用缩写或应用名
+  short_name: 'Memo'                                                      # 应用缩写或应用名
 
 search: true                                                              # 是否启用搜索
 search_type: docsearch                                                    # 默认为 default 即简单搜索，自 v1.3.2 后可用 DocSearch 搜索。
