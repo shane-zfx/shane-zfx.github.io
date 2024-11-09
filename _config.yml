@@ -37,7 +37,7 @@ formats:
 
 nav:                                                                      # 顶部导航栏，键值对定义显示名称与链接，可以是中文名（需使用引号）
   home: '/'
-  blog: '/blog/index.html'
+  blogs: '/blogs'
   archives: '/archives'
   tags: '/tags'
   about: '/about'
@@ -50,7 +50,7 @@ recommend-condition-size: 12                                              # 显�
 pagination:
   enabled: true
   per_page: 5
-  permalink: 'page:num/'
+  permalink: '/page:num/'
   title: ':title | :num of :max'
   limit: 0
   sort_field: 'date'
