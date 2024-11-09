@@ -18,6 +18,7 @@ nickname: 'shane.z'
 bio: '备忘录'
 avatar: '/assets/image/avadar/1.jfif'
 sns:
+  show: false
   github: 'https://github.com/shane-zfx'
   email: 'zffxxx7@gmail.com'
   weibo: 'https://weibo.com/username'
@@ -25,7 +26,7 @@ sns:
 ##------------------------------------------------------ 功能信息 -----------------------------------------------------##
 theme-color: default                                                      # 站点主题色，默认（蓝色，default）和粉色（pink）
 postPatterns: 'food'                                                      # 文章封面默认模式，仅在未定义封面图时生效。支持 circuitBoard，overlappingCircles，food，glamorous，ticTacToe，seaOfClouds 五种
-nightMode: true                                                           # 夜间模式是否默认开启
+nightMode: false                                                          # 夜间模式是否默认开启
 tos: ''                                                                   # 站点服务条款链接
 permalink: /:categories/:title                                            # 文章页自动生成规则
 mathjax: true                                                             # 是否开启 MathJax 公式支持
@@ -141,9 +142,13 @@ exclude: [ 'node_modules', 'dev', 'package.json', 'webpack.config.js', '.gitigno
 webpusher:                                                                # 动态消息、通知推送，定义时自动开启。
 
 pwa:
-  color: '#81BBFF'                                                        # 主题色
+  color: '#ffffff'                                                        # 主题色，默认#81BBFF
   short_name: 'Memo'                                                      # 应用缩写或应用名
-
+  icon192: "/assets/image/web-app-manifest-192x192.png"
+  icon512: "/assets/image/web-app-manifest-512x512.png"
+  icon_maskable_192: "/assets/image/web-app-manifest-192x192.png"
+  icon_maskable_512: "/assets/image/web-app-manifest-512x512.png"
+  appleicon: "/assets/image/apple-touch-icon.png"
 search: true                                                              # 是否启用搜索
 search_type: docsearch                                                    # 默认为 default 即简单搜索，自 v1.3.2 后可用 DocSearch 搜索。
 docsearch:                                                                # DocSearch 搜索配置节
