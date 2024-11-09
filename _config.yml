@@ -37,7 +37,7 @@ formats:
 
 nav:                                                                      # 顶部导航栏，键值对定义显示名称与链接，可以是中文名（需使用引号）
   home: '/'
-  blog: '/blog/index'
+  blog: '/blog/index.html'
   archives: '/archives'
   tags: '/tags'
   about: '/about'
