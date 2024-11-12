@@ -1,0 +1,31 @@
+{
+  "name": "shane-zfx.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:install": "npm install tailwindcss postcss autoprefixer",
+    "build:cssinit": "npx tailwindcss init",
+    "build:css": "npx tailwindcss -i ./_sass/tailwind.css -o ./assets/css/main.css --watch",
+    "serve:jekyll": "bundle exec jekyll serve",
+    "build:all": "npm run build:css && npm run build:jekyll",
+    "build:clean": "bundle exec jekyll clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shane-zfx/shane-zfx.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shane-zfx/shane-zfx.github.io/issues"
+  },
+  "homepage": "https://github.com/shane-zfx/shane-zfx.github.io#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.14"
+  }
+}
