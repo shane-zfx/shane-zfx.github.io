@@ -152,9 +152,9 @@ pwa:
 search: true                                                              # 是否启用搜索
 search_type: docsearch                                                    # 默认为 default 即简单搜索，自 v1.3.2 后可用 DocSearch 搜索。
 docsearch:                                                                # DocSearch 搜索配置节
-  appId: 'AH3DA24C7J'                                                     # 获取的应用 ID
-  apiKey: '67e5ce7e7b2f07af1a473906ddf115a5'                              # 获取的应用 Key
-  indexName: 'shane.z'                                                    # 获取的索引空间名
+  appId: 'CECCKRFB6D'                                                     # 获取的应用 ID
+  apiKey: '92ad49c64a1dd98b72a07a52bebd9e77'                              # 获取的应用 Key
+  indexName: 'shane21'                                                    # 获取的索引空间名
 
 
 comments:                                                                 # 评论功能
